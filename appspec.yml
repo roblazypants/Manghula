@@ -5,3 +5,9 @@ files:
     destination: /var/www/html/
   - source: error.html
     destination: /var/www/html/
+  AfterInstall:
+    - location: scripts/buildDockerContainer.sh
+      timeout: 180
+  ApplicationStart:
+    - location: scripts/runDockerContainer.sh
+      timeout: 3600
