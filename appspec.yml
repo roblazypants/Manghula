@@ -5,6 +5,7 @@ files:
     destination: /var/www/html/
   - source: error.html
     destination: /var/www/html/
+hooks:
   AfterInstall:
     - location: scripts/buildDockerContainer.sh
       timeout: 180
