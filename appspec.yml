@@ -2,6 +2,6 @@ version: 0.0
 os: linux
 files:
   - source: index.html
-    destination: /var/www/index.html
+    destination: /var/www/html/index.html
   - source: error.html
-    destination: /var/www/error.html
+    destination: /var/www/html/error.html
