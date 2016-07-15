@@ -3,7 +3,8 @@ files:
   - source: index.html
     destination: /var/www/index.html
   - source: source
-    destination: /var/www/error.htmlhooks:
+    destination: /var/www/error.html
+hooks:
   BeforeInstall:
       timeout: 300
   AfterInstall:
