@@ -1,15 +1,7 @@
+version: 0.0
 os: linux
 files:
   - source: index.html
     destination: /var/www/index.html
-  - source: source
+  - source: error.html
     destination: /var/www/error.html
-hooks:
-  BeforeInstall:
-      timeout: 300
-  AfterInstall:
-      timeout: 300
-  ApplicationStart:
-      timeout: 300
-  ApplicationStop:
-      timeout: 300
