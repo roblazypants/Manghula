@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Make sure we're not confused by old, incompletely-shutdown httpd
