@@ -8,6 +8,7 @@ RUN yum -y update && yum clean all
 RUN yum -y install httpd && yum clean all
 RUN yum -y install mod_ssl && yum clean all
 
+COPY certs.tar
 CMD ["tar -xvf certs.tar /"]
 
 EXPOSE 80
