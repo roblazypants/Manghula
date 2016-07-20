@@ -7,7 +7,7 @@ LABEL Version=2.4.6-31
 RUN yum -y update && yum clean all
 RUN yum -y install httpd && yum clean all
 
-ADD /usr/local/docker/certs.tar /
+ADD //usr/local/docker/certs.tar /
 
 
 ADD index.html /var/www/html
