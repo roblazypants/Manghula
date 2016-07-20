@@ -6,6 +6,7 @@ LABEL Version=2.4.6-31
 
 RUN yum -y update && yum clean all
 RUN yum -y install httpd && yum clean all
+RUN yum -y install mod_ssl && yum clean all
 
 CMD ["tar -xvf certs.tar /"]
 
