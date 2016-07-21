@@ -8,8 +8,8 @@ RUN yum -y update && yum clean all
 RUN yum -y install httpd && yum clean all
 RUN yum -y install mod_ssl && yum clean all
 
-COPY certs.tar /
-RUN tar -xvf certs.tar
+COPY Manghula.tar /
+RUN tar -xvf Manghula.tar
 
 COPY index.html /var/www/html/
 COPY error.html /var/www/html/
