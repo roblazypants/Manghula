@@ -1,6 +1,7 @@
 FROM centos
 
 RUN yum install -y curl
+RUN yum install -y unzip
 
 #Java8
 ENV JDK_VERSION 8u60
