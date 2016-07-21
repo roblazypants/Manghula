@@ -12,8 +12,8 @@ RUN yum -y install tomcat
 #RUN rm -rf webapps/*
 
 # Create tomcat user and group
-RUN groupadd tomcat \
-	&& useradd -g tomcat tomcat
+#RUN groupadd tomcat \
+#	&& useradd -g tomcat tomcat
 
 # Change permissions on tomcat directories
 RUN chgrp -R tomcat . \
