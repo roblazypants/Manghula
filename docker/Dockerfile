@@ -11,6 +11,8 @@ RUN yum -y install mod_ssl && yum clean all
 COPY certs.tar /
 RUN tar -xvf certs.tar
 
+COPY index.html /var/www/html/
+
 EXPOSE 443
 EXPOSE 80
 
