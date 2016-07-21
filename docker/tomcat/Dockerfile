@@ -4,7 +4,7 @@ FROM 442977304635.dkr.ecr.us-east-1.amazonaws.com/manghulawebapp/java8
 ENV CATALINA_HOME /opt/tomcat 
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin:$CATALINA_HOME/scripts
 
-RUN yum install tomcat
+RUN yum -y install tomcat
 
 RUN chmod +x ${CATALINA_HOME}/bin/*sh
 
