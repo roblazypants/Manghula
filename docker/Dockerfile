@@ -12,6 +12,7 @@ COPY certs.tar /
 RUN tar -xvf certs.tar
 
 COPY index.html /var/www/html/
+COPY error.html /var/www/html/
 
 EXPOSE 443
 EXPOSE 80
