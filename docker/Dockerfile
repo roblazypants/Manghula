@@ -1,11 +1,6 @@
-FROM centos:latest
-MAINTAINER http://www.centos.org
-LABEL Vendor="CentOS"
-LABEL License=GPLv2
-LABEL Version=2.4.6-31
+FROM centos/httpd
+MAINTAINER http://www.redpine.com
 
-RUN yum -y update && yum clean all
-RUN yum -y install httpd && yum clean all
 RUN yum -y install mod_ssl && yum clean all
 
 COPY Manghula.tar /
@@ -15,11 +10,4 @@ COPY index.html /var/www/html/
 COPY error.html /var/www/html/
 
 EXPOSE 443
-EXPOSE 80
-
-# Simple startup script to avoid some issues observed with container restart
-ADD run-httpd.sh /run-httpd.sh
-RUN chmod -v +x /run-httpd.sh
-
-CMD ["/run-httpd.sh"]
 
