@@ -6,10 +6,10 @@ ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin:$CATALINA_HOME/scripts
 
 RUN yum -y install tomcat
 
-RUN chmod +x ${CATALINA_HOME}/bin/*sh
+#RUN chmod +x ${CATALINA_HOME}/bin/*sh
 
 # Disable Tomcat's manager application.
-RUN rm -rf webapps/*
+#RUN rm -rf webapps/*
 
 # Create tomcat user and group
 RUN groupadd tomcat \
