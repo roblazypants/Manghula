@@ -11,3 +11,4 @@ EXPOSE 8080
 
 
 USER tomcat
+CMD ["catalina.sh", "run"]
