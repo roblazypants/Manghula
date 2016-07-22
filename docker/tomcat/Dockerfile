@@ -40,8 +40,8 @@ WantedBy=multi-user.target' >  /etc/systemd/system/tomcat.service
 EXPOSE 8080 
 #EXPOSE 8009
 
-RUN systemctl daemon-reload
-RUN systemctl enable tomcat
+#RUN systemctl daemon-reload
+#RUN systemctl enable tomcat
 
-USER tomcat
-CMD ["systemctl daemon-reload"]
+#USER tomcat
+#CMD ["systemctl daemon-reload"]
