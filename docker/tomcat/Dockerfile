@@ -12,7 +12,7 @@ RUN wget http://apache.mirrors.tds.net/tomcat/tomcat-8/v8.5.4/bin/apache-tomcat-
 RUN mkdir /opt/tomcat
 RUN tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
 
-RUNcd /opt/tomcat
+RUN cd /opt/tomcat
 RUN chgrp -R tomcat conf
 RUN chmod g+rwx conf
 RUN chmod g+r conf/*
