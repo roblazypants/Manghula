@@ -21,4 +21,4 @@ EXPOSE 8080
 
 WORKDIR $CATALINA_HOME
 USER tomcat
-CMD ["bin/catalina.sh start"]
+CMD $CATALINA_HOME/bin/catalina.sh run
