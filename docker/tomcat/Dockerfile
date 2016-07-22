@@ -13,10 +13,10 @@ RUN mkdir /opt/tomcat
 RUN tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
 
 RUN cd /opt/tomcat
-RUN chgrp -R tomcat conf
-RUN chmod g+rwx conf
-RUN chmod g+r conf/*
-RUN chown -R tomcat webapps/ work/ temp/ logs/
+RUN chgrp -R tomcat /opt/tomcat/conf
+RUN chmod g+rwx /opt/tomcat/conf
+RUN chmod g+r /opt/tomcat/conf/*
+RUN chown -R tomcat /opt/tomcat/webapps/ /opt/tomcat/work/ /opt/tomcat/temp/ /opt/tomcat/logs/
 
 RUN echo $'# Systemd unit file for tomcat \n\
 [Unit] \n\
