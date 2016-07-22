@@ -2,7 +2,7 @@ FROM 442977304635.dkr.ecr.us-east-1.amazonaws.com/java8:latest
 
 RUN yum -y install wget
 
-ENV JAVA_HOME /usr/java
+ENV JAVA_HOME /usr/java/default
 ENV CATALINA_HOME /opt/tomcat 
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin:$CATALINA_HOME/scripts
 
