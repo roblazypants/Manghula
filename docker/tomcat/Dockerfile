@@ -1,5 +1,6 @@
 FROM 442977304635.dkr.ecr.us-east-1.amazonaws.com/java8:latest
 
+RUN yum install wget
 
 ENV CATALINA_HOME /usr/share/tomcat
 ENV PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/bin:$CATALINA_HOME/scripts
