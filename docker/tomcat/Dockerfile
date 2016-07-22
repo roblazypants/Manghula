@@ -1,4 +1,4 @@
-FROM 442977304635.dkr.ecr.us-east-1.amazonaws.com/manghulawebapp/java8 
+FROM java8 
 
 
 ENV CATALINA_HOME /usr/share/tomcat
