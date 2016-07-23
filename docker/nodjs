@@ -1,5 +1,0 @@
-FROM centos:latest
-
-MAINTAINER danrb@redpine.com
-
-RUN yum -y install nodejs npm
