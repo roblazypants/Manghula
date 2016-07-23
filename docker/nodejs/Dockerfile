@@ -7,12 +7,12 @@ RUN yum clean all
 RUN rpm --rebuilddb
 
 RUN yum -y install nodejs npm
-RUN mkdir /node
+RUN mkdir /usr/local/node
 
-WORKDIR /node
+WORKDIR /usr/local/node
 
-COPY main.js /node/
+COPY main.js /usr/local/node/
 
 EXPOSE 8081 
 
-CMD["node", "/node/main.js"]
+CMD["node", "/usr/local/node/main.js"]
