@@ -13,4 +13,6 @@ WORKDIR /node
 
 COPY main.js /node
 
+EXPOSE 8081 
+
 CMD["node", "/node/main.js"]
