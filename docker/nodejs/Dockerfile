@@ -15,4 +15,4 @@ COPY main.js /usr/local/node/
 
 EXPOSE 8081 
 
-CMD node /usr/local/node/main.js
+CMD node main.js
