@@ -11,7 +11,7 @@ RUN mkdir /node
 
 WORKDIR /node
 
-COPY main.js /node
+COPY main.js /node/
 
 EXPOSE 8081 
 
