@@ -7,7 +7,6 @@ RUN yum clean all
 RUN rpm --rebuilddb
 
 RUN yum -y install nodejs npm
-RUN npm install -g express
 RUN npm install -g nodemon
 RUN mkdir /usr/local/node
 
@@ -21,6 +20,7 @@ COPY node_modules /usr/local/node/
 COPY public /usr/local/node/
 COPY routes /usr/local/node/
 COPY views /usr/local/node/
+RUN npm install
 
 EXPOSE 8081 3000
 
