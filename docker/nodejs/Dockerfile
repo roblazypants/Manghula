@@ -7,6 +7,7 @@ RUN yum clean all
 RUN rpm --rebuilddb
 
 RUN yum -y install nodejs npm
+RUN npm install -g express
 RUN npm install -g nodemon
 RUN mkdir /usr/local/node
 
