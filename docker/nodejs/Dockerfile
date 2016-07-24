@@ -21,6 +21,6 @@ COPY public /usr/local/node/
 COPY routes /usr/local/node/
 COPY views /usr/local/node/
 
-EXPOSE 8081 
+EXPOSE 8081 3000
 
 CMD node app.js
