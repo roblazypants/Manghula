@@ -16,7 +16,6 @@ COPY main.js /usr/local/node/
 COPY app.js /usr/local/node/
 COPY package.json /usr/local/node/
 COPY bin /usr/local/node/
-COPY node_modules /usr/local/node/
 COPY public /usr/local/node/
 COPY routes /usr/local/node/
 COPY views /usr/local/node/
