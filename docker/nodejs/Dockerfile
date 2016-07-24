@@ -13,6 +13,7 @@ RUN mkdir /usr/local/node
 WORKDIR /usr/local/node
 
 COPY main.js /usr/local/node/
+COPY app.js /usr/local/node/
 
 EXPOSE 8081 
 
