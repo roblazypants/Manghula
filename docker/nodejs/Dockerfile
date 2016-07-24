@@ -23,4 +23,5 @@ RUN npm install
 
 EXPOSE 8081 3000
 
-CMD node app.js
+RUN node app.js
+CMD npm start
