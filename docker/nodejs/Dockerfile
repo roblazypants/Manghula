@@ -7,6 +7,7 @@ RUN yum clean all
 RUN rpm --rebuilddb
 
 RUN yum -y install nodejs npm
+RUN npm install -g nodemon
 RUN mkdir /usr/local/node
 
 WORKDIR /usr/local/node
@@ -15,4 +16,4 @@ COPY main.js /usr/local/node/
 
 EXPOSE 8081 
 
-CMD node main.js
+CMD node app.js
