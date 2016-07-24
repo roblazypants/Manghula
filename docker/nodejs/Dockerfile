@@ -15,10 +15,10 @@ WORKDIR /usr/local/node
 COPY main.js /usr/local/node/
 COPY app.js /usr/local/node/
 COPY package.json /usr/local/node/
-COPY bin /usr/local/node/
-COPY public /usr/local/node/
-COPY routes /usr/local/node/
-COPY views /usr/local/node/
+ADD bin /usr/local/node/bin
+ADD public /usr/local/node/public
+ADD routes /usr/local/node/routes
+ADD views /usr/local/node/views
 RUN npm install
 
 EXPOSE 8081 3000
