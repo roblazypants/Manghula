@@ -6,13 +6,22 @@
 
 var app = require('../app');
 var debug = require('debug')('Manghula:server');
+
+var https = require('https');
 var http = require('http');
+var fs = require('fs');
+
+// This line is from the Node.js HTTPS documentation.
+var options = {
+  key: fs.readFileSync('etc/pki/tls/private/private.key'),
+  cert: fs.readFileSync('etc/pki/tls/certs/2_manghula.com.crt')
+};
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '80');
 app.set('port', port);
 
 /**
@@ -26,6 +35,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
+https.createServer(options, app).listen(443);
 server.on('error', onError);
 server.on('listening', onListening);
 
