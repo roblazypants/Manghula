@@ -31,8 +31,8 @@ app.set('port', port);
 var server = http.createServer(app);
 
 var httpsserver = https.createServer(options, app).listen(443);
-httpserver.on('error', onError);
-httpserver.on('listening', onListening);
+httpsserver.on('error', onError);
+httpsserver.on('listening', onListening);
 
 /**
  * Listen on provided port, on all network interfaces.
