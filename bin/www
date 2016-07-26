@@ -17,8 +17,8 @@ var options = {
 };
 
 
-app.get('/', function (req, res) {
-   res.send('Hello World!');
+app.configure(function(){
+    app.use(app.router);
 });
 
 /**
