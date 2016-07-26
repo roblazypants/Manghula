@@ -16,13 +16,7 @@ COPY Manghula.tar /
 RUN tar -xvf /Manghula.tar
 
 
-COPY app.js /usr/local/node/ && \
-    bin /usr/local/node/bin && \
-    public /usr/local/node/public && \
-    routes /usr/local/node/routes && \
-    views /usr/local/node/views
-
-COPY package.json /usr/local/node/
+COPY . /usr/local/node/
 RUN npm install
 
 EXPOSE 80 
