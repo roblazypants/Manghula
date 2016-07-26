@@ -8,7 +8,6 @@ var app = require('../app');
 var debug = require('debug')('Manghula:server');
 
 var https = require('https');
-var http = require('http');
 var fs = require('fs');
 
 // This line is from the Node.js HTTPS documentation.
@@ -21,28 +20,25 @@ var options = {
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer(app);
 
-var httpsserver = https.createServer(options, app).listen(443, function () {
+var httpsserver = https.createServer(options, app).listen(port, function () {
    console.log('Started!');
 });
-httpsserver.on('error', onError);
-httpsserver.on('listening', onHttpsListening);
+https.on('error', onError);
+https.on('listening', onListening);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -103,14 +99,4 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-/**
- * Event listener for HTTP server "listening" event.
- */
 
-function onHttpsListening() {
-  var addr = httpsserver.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
