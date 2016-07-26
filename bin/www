@@ -30,9 +30,9 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-var httpsserver = https.createServer(options, app).listen(443) {
-   console.log('HTTPS Started!');
-};
+var httpsserver = https.createServer(options, app).listen(443, function () {
+   console.log('Started!');
+});
 httpsserver.on('error', onError);
 httpsserver.on('listening', onHttpsListening);
 
