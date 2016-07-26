@@ -30,9 +30,11 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-var httpsserver = https.createServer(options, app).listen(443);
+var httpsserver = https.createServer(options, app).listen(443) {
+   console.log('HTTPS Started!');
+};
 httpsserver.on('error', onError);
-httpsserver.on('listening', onListening);
+httpsserver.on('listening', onHttpsListening);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -95,6 +97,17 @@ function onError(error) {
  */
 
 function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onHttpsListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
