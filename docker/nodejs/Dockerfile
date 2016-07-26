@@ -17,12 +17,12 @@ RUN tar -xvf /Manghula.tar
 
 
 COPY . /usr/local/node/
+WORKDIR /usr/local/node
 RUN npm install
 
 EXPOSE 80 
 EXPOSE 443
 
-WORKDIR /usr/local/node
 
 
 RUN node app.js
