@@ -7,8 +7,9 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
     rpm --rebuilddb
 
 RUN yum -y install nodejs npm && \
-    npm install -g nodemon && \
-    mkdir /usr/local/node
+    npm install -g nodemon
+    
+RUN mkdir /usr/local/node/
 
 #copy certs from Jenkins work directory
 COPY Manghula.tar /
