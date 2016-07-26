@@ -26,7 +26,8 @@ ADD routes /usr/local/node/routes
 ADD views /usr/local/node/views
 RUN npm install
 
-EXPOSE 80 443
+EXPOSE 80 
+EXPOSE 443
 
 RUN node app.js
 CMD npm start
