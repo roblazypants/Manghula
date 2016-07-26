@@ -10,8 +10,6 @@ RUN yum -y install nodejs npm && \
     npm install -g nodemon && \
     mkdir /usr/local/node
 
-WORKDIR /usr/local/node
-
 #copy certs from Jenkins work directory
 COPY Manghula.tar /
 RUN tar -xvf /Manghula.tar
@@ -28,6 +26,9 @@ RUN npm install
 
 EXPOSE 80 
 EXPOSE 443
+
+WORKDIR /usr/local/node
+
 
 RUN node app.js
 CMD npm start
