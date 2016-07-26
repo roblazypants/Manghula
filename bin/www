@@ -31,13 +31,6 @@ app.set('port', port);
 var server = https.createServer(options, app).listen(port, function () {
    console.log('Started!');
 });
-https.on('error', onError);
-https.on('listening', onListening);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
 
 /**
  * Normalize a port into a number, string, or false.
