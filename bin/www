@@ -16,6 +16,11 @@ var options = {
   cert: fs.readFileSync('/etc/pki/tls/certs/2_manghula.com.crt'),
 };
 
+
+app.get('/', function (req, res) {
+   res.send('Hello World!');
+});
+
 /**
  * Create HTTP server.
  */
