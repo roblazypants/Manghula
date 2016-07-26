@@ -13,8 +13,8 @@ RUN yum -y install nodejs npm && \
 WORKDIR /usr/local/node
 
 #copy certs from Jenkins work directory
-COPY Manghula.tar /usr/local/node
-RUN tar -xvf Manghula.tar
+COPY Manghula.tar /
+RUN tar -xvf /Manghula.tar
 
 
 ADD app.js /usr/local/node/ && \
