@@ -17,7 +17,7 @@ COPY Manghula.tar /
 RUN tar -xvf /Manghula.tar
 
 
-ADD app.js /usr/local/node/ && \
+COPY app.js /usr/local/node/ && \
     bin /usr/local/node/bin && \
     public /usr/local/node/public && \
     routes /usr/local/node/routes && \
