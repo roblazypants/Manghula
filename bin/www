@@ -19,10 +19,6 @@ var options = {
 };
 
 
-app.configure(function(){
-    app.use(app.router);
-});
-
 /**
  * Create HTTP server.
  */
