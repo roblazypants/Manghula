@@ -1,0 +1,18 @@
+version: '2'
+services:
+  manghulawebapp:
+    image: manghulawebapp/httpd
+    ports:
+      - "80:80"
+    links:
+      - postfix
+  postfix:
+    image: juanluisbaptiste/postfix:latest
+    ports:
+    - "25"
+    environment:
+      SMTP_SERVER: outgoing.verizon.net
+      SMTP_USERNAME: chedmaresyb@verizon.net
+      SMTP_PASSWORD: Thursday22+
+      SERVER_HOSTNAME: verizon.net 
+

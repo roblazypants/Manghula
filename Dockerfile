@@ -1,17 +1,23 @@
-FROM centos/httpd
+FROM httpd:alpine
+
 MAINTAINER http://www.redpine.com
 
-RUN yum -y update && yum -y install mod_ssl mail sendmail && yum clean all
+#RUN apk add --update mod_ssl 
 
-COPY ssl.conf   /etc/httpd/conf.d/
-COPY index.html /var/www/html/
-COPY error.html /var/www/html/
-COPY ajax.php   /var/www/html/
-COPY config.php /var/www/html/
+ADD httpd-ssl.conf   /usr/local/apache2/conf/extra/httpd-ssl.conf
+COPY httpd.conf /usr/local/apache2/conf/
+COPY index.html /usr/local/apache2/htdocs/
+COPY error.html /usr/local/apache2/htdocs/
+COPY ajax.php   /usr/local/apache2/htdocs/
+COPY config.php /usr/local/apache2/htdocs/
 
-ADD img /var/www/html/img
-ADD css /var/www/html/css
-ADD js  /var/www/html/js
+ADD img /usr/local/apache2/htdocs/img
+ADD css /usr/local/apache2/htdocs/css
+ADD js  /usr/local/apache2/htdocs/js
+
+RUN mkdir /etc/pki
+
+ENV TERM=xterm
 
 EXPOSE 443
 
