@@ -87,7 +87,8 @@ $(document).ready(function(){
 				$('.sbtn').val('Thank You!');
 				$('.sinput').val('');
 				setTimeout(function(){$('.sbtn').val('SUBSCRIBE!');},3000);
-			}
+			},
+		       error:function(exception){alert('Exeption:'+exception);}
 		})
 
 	})
