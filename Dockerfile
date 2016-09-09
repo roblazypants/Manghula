@@ -4,38 +4,13 @@ MAINTAINER http://www.redpine.com
 
 #RUN apk add --update mod_ssl 
 RUN apk add --update mailx ssmtp  php5 && \
-	apk add --update \
-		php5-mcrypt \
-		php5-soap \
-		php5-openssl \
-		php5-gmp \
-		php5-pdo_odbc \
-		php5-json \
-		php5-dom \
-		php5-pdo \
-		php5-zip \
-		php5-mysql \
-		php5-sqlite3 \
-		php5-apcu \
-		php5-pdo_pgsql \
-		php5-bcmath \
-		php5-gd \
-		php5-xcache \
-		php5-odbc \
-		php5-pdo_mysql \
-		php5-pdo_sqlite \
-		php5-gettext \
-		php5-xmlreader \
-		php5-xmlrpc \
-		php5-bz2 \
-		php5-memcache \
-		php5-mssql \
-		php5-iconv \
-		php5-pdo_dblib \
-		php5-curl \
-		php5-ctype \
-		php5-phar \
-		php5-cli 
+    apk update && apk upgrade && \
+    apk add curl openssl && \
+    apk add php5 php5-apache2 php5-openssl && \
+    apk add php5-fpm php5-cli php5-mysql php5-pgsql php5-sqlite3 php5-phar && \
+    apk add php5-apcu php5-intl php5-imagick php5-mcrypt php5-json php5-gd php5-curl && \
+    cd /tmp && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer&& \
+    rm -rf /var/cache/apk/*
 
 ADD httpd-ssl.conf   /usr/local/apache2/conf/extra/httpd-ssl.conf
 COPY httpd.conf /usr/local/apache2/conf/
