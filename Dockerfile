@@ -16,9 +16,6 @@ ADD httpd-ssl.conf   /usr/local/apache2/conf/extra/httpd-ssl.conf
 COPY httpd.conf /usr/local/apache2/conf/
 COPY index.html /usr/local/apache2/htdocs/
 COPY error.html /usr/local/apache2/htdocs/
-COPY ajax.php   /usr/local/apache2/htdocs/
-COPY config.php /usr/local/apache2/htdocs/
-COPY crossdomain.xml /usr/local/apache2/htdocs/
 COPY ssmtp.conf /etc/ssmtp/
 
 ADD img /usr/local/apache2/htdocs/img
