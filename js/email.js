@@ -1,7 +1,11 @@
-subscribeApp.controller('emailCtrl', function($scope) {
-    var subscibeTxt = '';
- 
-    subscribe: function() {
-      subscibeTxt = '';
+(function(angular) {
+  'use strict';
+angular.module('subscriptionApp', [])
+  .controller('emailCtrl', ['$scope', function($scope) {
+    $scope.email = '';
+
+    $scope.subscribe = function() {
+      $scope.email = '';
     };
-  });
+  }]);
+})(window.angular);

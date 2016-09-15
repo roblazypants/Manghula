@@ -4,7 +4,7 @@
 	<title>Manghula</title>
 	<meta name="generator" content="Bluefish 2.2.7" >
 	<meta name="author" content="Daniel" >
-	<meta name="date" content="2016-09-14T09:25:26-0500" >
+	<meta name="date" content="2016-09-15T09:35:48-0500" >
 	<meta name="copyright" content="">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -15,7 +15,6 @@
 	<meta http-equiv="expires" content="0">
 	<link rel="stylesheet" href="css/manghula.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	<script src="js/mainApp.js"></script>
 	<script src="js/email.js"></script>
 </head>
 
@@ -29,14 +28,10 @@
 	</div>
 	
 	<div class="footer">
-	    <div ng-app="subscribeApp" ng-controller="emailCtrl">
+	    <div ng-app="subscriptionApp" ng-controller="emailCtrl">
 	    <p>To receive notifications, please provide your email.</p>
-	      <label>Email:</label>
-	      <form ng-submit="emailCtrl.subscribe()">
-	        <input type="text" ng-model="emailCtrl.subscibeTxt"  size="30"
-	               placeholder="Enter an email here">
-	        <input class="btn-primary" type="submit" value="subscribe">
-	      </form>
+ 		 E-mail: <input type="email" ng-model="email" /><br />
+ 		<button ng-click="subscribe();">Subscribe</button> 		 
 	    <hr>
 	    </div>
 			<div align="center" class='copyright'>

@@ -1,1 +1,1 @@
-var mainApp = angular.module("subscribeApp", []);
+var subscribeApp = angular.module("subscribeApp", []);
